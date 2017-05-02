@@ -12,6 +12,8 @@ mariadb-galera-server:
   labels:
     io.rancher.container.hostname_override: container_name
   entrypoint: bash -x /opt/rancher/start_galera
+  expose:
+  - 3306:3307/tcp
 mariadb-galera-data:
   image: rancher/galera:10.0.22-rancher2
   net: none
@@ -41,12 +43,3 @@ galera:
   stdin_open: true
   tty: true
   command: /bin/bash
-
-galera-lb:
-  expose:
-  - 3306:3307/tcp
-  tty: true
-  image: rancher/load-balancer-service
-  links:
-  - galera:galera
-  stdin_open: true
