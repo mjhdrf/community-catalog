@@ -1,5 +1,5 @@
 name: MariaDB Galera Cluster
 description: |
-    (Experimental) Synchronous multi-master cluster for MariaDB
+    (MJH) Synchronous multi-master cluster for MariaDB
 version: 10.0.22-mjh1
 category: Databases
